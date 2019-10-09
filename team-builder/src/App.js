@@ -1,24 +1,35 @@
 import React from 'react';
 import logo from './logo.svg';
+import TeamForm from "./components/TeamForm";
+import Team from "./components/Team";
 import './App.css';
 
 function App() {
+  
+  const [teams, setTeams] = React.useState([
+    {
+      id: 1,
+      title: "Jake Gifford",
+      email: "panamajake86@gmail.com",
+      role: "Sexy beast",
+    }
+  ]);
+
+  const addTeammate = team => {
+    const newTeam = {
+      id: Date.now(),
+      title: team.title,
+      email: team.email,
+      role: team.role,
+    };
+    setTeams([ ...teams, newTeam])
+  };
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My Team</h1>
+      <TeamForm addTeamFn={addTeammate} />
+      <Team teamList={teams} />
     </div>
   );
 }
