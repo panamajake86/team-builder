@@ -18,9 +18,9 @@ const TeamForm = props => {
             <label htmlFor="title">Teammate</label>
             <input id="title" value={team.title} name="title" type="text" onChange={handleChange} />
             <label htmlFor="email">Email</label>
-            <input id="email" value={team.body} name="email" type="text" onChange={handleChange} />
+            <input id="email" value={team.email} name="email" type="text" onChange={handleChange} />
             <label htmlFor="role">Role</label>
-            <input id="role" value={team.body} name="role" type="text" onChange={handleChange} />
+            <input id="role" value={team.role} name="role" type="text" onChange={handleChange} />
             <button type="submit">Add Teammate</button>
         </form>
     );
