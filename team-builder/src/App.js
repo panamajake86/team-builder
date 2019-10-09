@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import TeamForm from "./components/TeamForm";
 import Team from "./components/Team";
-import './App.css';
+import './styles.css';
 
 function App() {
   
